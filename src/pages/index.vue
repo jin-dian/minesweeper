@@ -196,7 +196,7 @@ function showMine() {
         </button>
       </div>
       <button mt-10 @click="showMine()">偷看一下</button>
-      <button mt-10 ml-10 @click="reset()">重新开始</button>
+      <button mt-10 ml-10 @click="reset()">重置</button>
     </div>
   </div>
 </template>
