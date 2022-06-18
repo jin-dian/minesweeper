@@ -147,6 +147,16 @@ function getBlockClass(block: BlockState) {
   return block.mine ? 'bg-red-500/50' : numberColors[block.adjacentMine]
 }
 
+function reset() {
+  state.forEach(row => row.forEach(block => {
+    block.revealed = false
+    block.flagged = false
+    block.mine = false
+    block.adjacentMine = 0
+  }))
+  mineGenerated = false
+}
+
 function showMine() {
   cheatConfig.cheat = true
   setTimeout(() => {
@@ -186,6 +196,7 @@ function showMine() {
         </button>
       </div>
       <button mt-10 @click="showMine()">偷看一下</button>
+      <button mt-10 ml-10 @click="reset()">重新开始</button>
     </div>
   </div>
 </template>
